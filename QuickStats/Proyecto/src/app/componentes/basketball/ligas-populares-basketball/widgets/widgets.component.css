@@ -23,10 +23,11 @@
 
 .main-down-left {
   min-width: 280px;
-  width: 280px;
+  width: 450px;
 }
 
 .season-control {
+  margin-left: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,9 +71,9 @@
 .main-down-right {
   margin: 0 0 0 16px;
   height: 100%;
-  width: 100%;
+  width: 50%;
   max-width: 985px;
-  min-width: 728px;
+  min-width: 664px;
   margin-bottom: 20px;
 }
 

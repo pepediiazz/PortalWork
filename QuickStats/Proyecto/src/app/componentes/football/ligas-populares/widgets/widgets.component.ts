@@ -1,21 +1,21 @@
 import { Component, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router'; // Agregar Router
 import { isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from '../../header/header.component';
 import { LigasPopularesComponent } from '../ligas-populares.component';
 
 @Component({
-  selector: 'app-widgets',
+  selector: 'app-widgets2',
   templateUrl: './widgets.component.html',
   styleUrls: ['./widgets.component.css'],
   standalone: true,
-  imports: [HeaderComponent,LigasPopularesComponent]
+  imports: [HeaderComponent, LigasPopularesComponent]
 })
 export class WidgetsComponent implements AfterViewInit {
   leagueId: string = '';
   season: string = '';
 
-  constructor(private route: ActivatedRoute, @Inject(PLATFORM_ID) private platformId: any) { }
+  constructor(private route: ActivatedRoute, private router: Router, @Inject(PLATFORM_ID) private platformId: any) { }
 
   ngOnInit(): void {
     this.leagueId = this.route.snapshot.paramMap.get('leagueId') ?? '39'; // Usa una liga por defecto si no se encuentra
@@ -47,5 +47,12 @@ export class WidgetsComponent implements AfterViewInit {
       });
       window.document.dispatchEvent(event);
     }
+  }
+
+  changeSeason(increment: number): void {
+    const currentYear = parseInt(this.season, 10);
+    const newYear = currentYear + increment;
+    this.season = `${newYear}`;
+    this.initializeWidget();
   }
 }

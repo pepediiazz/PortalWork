@@ -48,4 +48,10 @@ export class WidgetsVolleyballComponent implements AfterViewInit {
       window.document.dispatchEvent(event);
     }
   }
+  changeSeason(increment: number): void {
+    const currentYear = parseInt(this.season, 10);
+    const newYear = currentYear + increment;
+    this.season = `${newYear}`;
+    this.initializeWidget();
+  }
 }

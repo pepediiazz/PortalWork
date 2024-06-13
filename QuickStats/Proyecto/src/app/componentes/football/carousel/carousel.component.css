@@ -294,3 +294,76 @@
     background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro al pasar el ratón */
     box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5); /* Sombra en forma de media luna */
 }
+.carousel-item1-item-equipo-home img {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    position: relative;
+    right: -15px;
+    visibility: visible;
+    }
+    .carousel-item1-item-equipo-away img {
+        max-width: 80px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        visibility: visible;
+    }
+
+    .carousel-item1-item-equipo-away-nombre{
+        max-width: 250px;
+    	
+    }
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .carousel-item1-item-equipo-home {
+        width: 24vh;
+    }
+  
+    .carousel-item1-item-equipo-home-nombre {
+        max-width: 139px;
+        }
+  
+    .carousel-item1-item-equipo-away-nombre {
+        max-width: 170px;
+    }
+  
+    .carousel-item1-item-equipo-away-nombre-text {
+        font-size: 14px;
+        margin-top: 22px;
+        right: 108px;
+    }
+  
+    .carousel-item1-item-equipo-vs {
+      font-size: 24px;
+    }
+  
+    .carousel-item1-item-equipo-home-nombre-text {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  
+    .carousel-item1-item-equipo-home img {
+        margin-left: 22px;
+        max-width: 40px;
+        max-height: 40px;
+        margin-right: 3px;
+    }
+    .carousel-item1-item-equipo-away img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+  }
+
+  
+
+
+
+  
+  
+
+
+  
+  

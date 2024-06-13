@@ -2,15 +2,15 @@
     grid-area: item_8;
     margin-bottom: 16px;
     min-height: 292px;
-}
-
-.partidos-proximos-featured {
+  }
+  
+  .partidos-proximos-featured {
     background-color: #fff;
     position: relative;
     width: 100%;
-}
-
-.partidos-proximos-featured-title {
+  }
+  
+  .partidos-proximos-featured-title {
     right: 0;
     align-items: center;
     background-color: #8796aa;
@@ -24,32 +24,34 @@
     position: absolute;
     top: 0;
     z-index: 10;
-}
-
-.carrousel-partidos-proximos {
+  }
+  
+  .carrousel-partidos-proximos {
     height: inherit;
     width: 100%;
     direction: ltr;
     position: relative;
-}
-
-.carrousel1 {
+  }
+  
+  .carrousel1 {
     height: inherit;
     overflow: hidden;
     position: relative;
     width: 100%;
-}
-
-.carousel-item {
+  }
+  
+  .carousel-item {
     background-color: #fff;
     flex: 1 0 100%;
     flex-basis: 100%;
     height: auto;
     min-height: 56px;
     width: inherit;
-}
-
-.carousel-item1-item-equipo {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item1-item-equipo {
     align-items: center;
     display: flex;
     height: 82px;
@@ -58,9 +60,9 @@
     width: 100%;
     position: relative;
     left: -12px;
-}
-
-.carousel-item1-item-equipo-vs {
+  }
+  
+  .carousel-item1-item-equipo-vs {
     align-items: center;
     color: #fff;
     display: flex;
@@ -70,23 +72,21 @@
     position: absolute;
     width: 100%;
     z-index: 1;
-}
-
-.carousel-item1-item-equipo-home-nombre {
+  }
+  
+  .carousel-item1-item-equipo-home-nombre {
     justify-content: flex-start;
     text-align: left;
     clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
-    margin-left: 3px;   
-     align-items: center;
+    padding-left: 5px;
+    align-items: center;
     height: 60px;
     font-size: 20px;
-    position: relative;
-    right: -10px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));
     background-color: rgb(0, 0, 0);
-}
-
-.carousel-item1-item-equipo-away-nombre {
+  }
+  
+  .carousel-item1-item-equipo-away-nombre {
     justify-content: flex-end;
     text-align: right;
     clip-path: polygon(18px 0, 100% 0, 100% 100%, 0 100%);
@@ -97,13 +97,13 @@
     height: 60px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));
     background-color: rgb(0, 0, 0);
-}
-
-.carousel-item1-item-equipo-home-nombre-text {
+  }
+  
+  .carousel-item1-item-equipo-home-nombre-text {
+    padding: 2px;
     display: block;
     max-width: 100%;
     overflow: hidden;
-    text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-top: 15px;
@@ -111,9 +111,9 @@
     position: relative;
     left: 20px;
     margin-right: 5px;
-}
-
-.carousel-item1-item-equipo-away {
+  }
+  
+  .carousel-item1-item-equipo-away {
     align-items: center;
     display: flex;
     justify-content: flex-end;
@@ -121,14 +121,14 @@
     font-size: 20px;
     font-weight: 500;
     color: #fff;
-}
-
-.nada {
+  }
+  
+  .nada {
     height: 14px;
     width: 100%;
-}
-
-.fecha {
+  }
+  
+  .fecha {
     align-self: center;
     color: #505050;
     display: flex;
@@ -141,9 +141,9 @@
     width: 80%;
     left: 16px;
     position: relative;
-}
-
-.carousel-item1-item-equipo-away-nombre-text {
+  }
+  
+  .carousel-item1-item-equipo-away-nombre-text {
     display: block;
     max-width: 100%;
     overflow: hidden;
@@ -157,24 +157,25 @@
     margin-left: 5px;
     position: relative;
     right: 30px;
-}
-
-.carousel-item1-item-equipo-away-img {
+  }
+  
+  .carousel-item1-item-equipo-away-img {
     right: -30px;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, .2));  
     position: absolute;
     z-index: 1;
-}
-
-.carousel-item1-item-equipo-home {
+  }
+  
+  .carousel-item1-item-equipo-home {
     align-items: center;
     display: flex;
     width: 36vh;    
     font-size: 20px;
     font-weight: 500;
     color: #fff;
-}
-
-.carousel-item1-item-equipos {
+  }
+  
+  .carousel-item1-item-equipos {
     margin-right: 80px;
     margin-left: 80px;
     color: #fff;
@@ -184,36 +185,34 @@
     height: 56px;
     position: relative;
     width: 90%; /* Ajuste del ancho para hacer los rectángulos más largos */
-}
-
-
-
-.carousel-fecha-restante-contador {
+  }
+  
+  .carousel-fecha-restante-contador {
     font-size: 32px;
     height: 50px;
     min-width: 164px;
     white-space: nowrap;
-}
-
-.carousel-item1 {
+  }
+  
+  .carousel-item1 {
     background-color: #fff;
     flex: 1 0 100%;
     flex-basis: 100%;
     height: auto;
     min-height: 56px;
     width: inherit;
-}
-
-.carousel-item1-item {
+  }
+  
+  .carousel-item1-item {
     display: flex;
     flex-direction: column;
     height: 100%;
     min-height: 270px;
     position: relative;
     width: 100%;
-}
-
-.carousel-item1-item-title {
+  }
+  
+  .carousel-item1-item-title {
     align-items: center;
     color: #505050;
     display: grid;
@@ -224,32 +223,34 @@
     justify-content: center;
     padding: 16px 0 8px;
     width: 100%;
-}
-.foto {
+  }
+  
+  .foto {
     height: 40px;
     width: 40px;
     position: relative;
     left: 76px;
     top: -10px;
-}
-.carousel-fecha-restante {
+  }
+  
+  .carousel-fecha-restante {
     align-self: center;
     color: #505050;
     cursor: pointer;
     text-decoration: none;
-}
-
-.flecha-izquierda {
+  }
+  
+  .flecha-izquierda {
     border-left: 1px solid #dfe6ee;
     right: -24px;
-}
-
-.flecha-derecha {
+  }
+  
+  .flecha-derecha {
     border-right: 1px solid #dfe6ee;
     left: -24px;
-}
-
-.abajo {
+  }
+  
+  .abajo {
     align-items: center;
     background-color: #fff;
     border-top: 1px solid #ecf0f3;
@@ -258,9 +259,9 @@
     height: 16px;
     justify-content: center;
     width: 100%;
-}
-
-.prev, .next {
+  }
+  
+  .prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -278,110 +279,92 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.next {
+  }
+  
+  .next {
     right: 5px; /* Ajustar según sea necesario */
-}
-
-.prev {
-    left: 5px; /* Ajustar según sea necesario */
-}
-
-.prev:hover, .next:hover {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro al pasar el ratón */
-    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5); /* Sombra en forma de media luna */
-}
-.no-games {
-    text-align: center;
-    font-size: 18px;
-    color: #505050;
-    margin-top: 20px;
-  }
-  .carrousel1 {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-item {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide-left {
-    transform: translateX(-100%);
-  }
-  
-  .slide-right {
-    transform: translateX(100%);
-  }
-  
-  .no-games {
-    text-align: center;
-    font-size: 20px;
-    color: #505050;
-    margin-top: 20px;
-  }
-  
-  .carrousel1 {
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-item {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide-left {
-    transform: translateX(-100%);
-  }
-  
-  .slide-right {
-    transform: translateX(100%);
-  }
-  
-  .no-games {
-    text-align: center;
-    font-size: 20px;
-    color: #505050;
-    margin-top: 20px;
-  }
-  
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: 32px;
-    height: 32px;
-    margin-top: -16px;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .next {
-    right: 5px;
   }
   
   .prev {
-    left: 5px;
+    left: 5px; /* Ajustar según sea necesario */
   }
   
-  .prev:hover,
-  .next:hover {
+  .prev:hover, .next:hover {
     color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro al pasar el ratón */
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5); /* Sombra en forma de media luna */
   }
+  .carousel-item1-item-equipo-home img {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    position: relative;
+    right: -15px;
+    visibility: visible;
+    }
+    .carousel-item1-item-equipo-away img {
+        max-width: 80px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        visibility: visible;
+    }
+  
+    .carousel-item1-item-equipo-away-nombre{
+        max-width: 250px;
+      
+    }
+  /* Media query para dispositivos móviles */
+  @media (max-width: 768px) {
+    .carousel-item1-item-equipo-home {
+        width: 24vh;
+    }
+  
+    .carousel-item1-item-equipo-home-nombre {
+        max-width: 139px;
+        }
+  
+    .carousel-item1-item-equipo-away-nombre {
+        max-width: 170px;
+    }
+  
+    .carousel-item1-item-equipo-away-nombre-text {
+        font-size: 14px;
+        margin-top: 22px;
+        right: 108px;
+    }
+  
+    .carousel-item1-item-equipo-vs {
+      font-size: 24px;
+    }
+  
+    .carousel-item1-item-equipo-home-nombre-text {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  
+    .carousel-item1-item-equipo-home img {
+        margin-left: 22px;
+        max-width: 40px;
+        max-height: 40px;
+        margin-right: 3px;
+    }
+    .carousel-item1-item-equipo-away img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   

@@ -1,14 +1,17 @@
-<app-header></app-header>    
+<app-header></app-header>
 <div class="main-top"></div>
 <div class="main-mid"></div>
 <div class="main-down">
   <div class="main-down-left">
+    <div class="season-control">
+      <button (click)="changeSeason(-1)" class="season-button">Temporada Anterior</button>
+      <div class="current-season">{{ season }}</div>
+      <button (click)="changeSeason(1)" class="season-button">Próxima Temporada</button>
+    </div>
   </div>
   <div class="main-down-right">
-    <div id="wg-api-football-standings-container" style="margin: 0px 35px">
+    <div id="wg-api-football-standings-container" style="margin: 0px 72px; margin-left: 20px;">
       <div id="wg-api-football-standings"></div>
     </div>
-    
   </div>
 </div>
-
