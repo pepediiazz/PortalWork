@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## NPM INSTALL 10.7
+
+La api de noticias esta cargada en node.js express, si no quieres hacerlo simplente en el servicio de news-sport por la url de la api newsapi.
