@@ -1,0 +1,16 @@
+<div class="handball">
+  <app-header (toggleFavoritesVisibility)="onToggleFavoritesVisibility()"></app-header>
+  <div class="main-top"></div>
+  <div class="main-mid"></div>
+  <div class="main-down">
+    <div class="main-down-left">
+      <app-ligas-populares-handball></app-ligas-populares-handball>
+    </div>
+    <div class="main-down-right">
+      <app-handball-carousel></app-handball-carousel>
+      <app-handball-prediction-carousel></app-handball-prediction-carousel>
+      <app-handball-news></app-handball-news>
+      <app-handball-favorites #favoritesComponent [isVisible]="isFavoritesVisible"></app-handball-favorites>
+    </div>
+  </div>
+</div>

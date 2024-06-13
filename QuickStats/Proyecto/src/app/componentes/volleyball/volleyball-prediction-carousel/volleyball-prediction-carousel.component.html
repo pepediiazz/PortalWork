@@ -1,0 +1,76 @@
+<div *ngIf="matches.length === 0; else showMatches" class="no-matches">
+    <p>No hay partidos disponibles en esta fecha.</p>
+  </div>
+  
+  <ng-template #showMatches>
+    <div class="partidos-proximos">
+      <div class="partidos-proximos-featured">
+        <div class="partidos-proximos-featured-title">Prediction Match</div>
+        <div class="carrousel-partidos-proximos">
+          <div class="carrousel1">
+            <div class="carousel-item">
+              <div class="carousel-item1" style="order: 0;">
+                <div class="carousel-item1-item">
+                  <div class="carousel-fecha-restante">
+                    <div class="carousel-fecha-restante-arriba">
+                      <img *ngIf="matches[currentMatchIndex].teams.home.logo" [src]="matches[currentMatchIndex].teams.home.logo" class="carousel-item1-item-title-img"
+                        style="max-width: 24px; max-height: 24px; width: auto; height: auto; visibility: visible;">
+                      <a *ngIf="matches[currentMatchIndex].teams.home.name" class="carousel-link" style="color: #505050; cursor: pointer; text-decoration: none;">
+                        {{ matches[currentMatchIndex].teams.home.name }}
+                      </a>
+                      <span class="carousel-link" style="color: #505050;">| VS |</span>
+                      <a *ngIf="matches[currentMatchIndex].teams.away.name" class="carousel-link" style="color: #505050; cursor: pointer; text-decoration: none;">
+                        {{ matches[currentMatchIndex].teams.away.name }}
+                      </a>
+                      <img *ngIf="matches[currentMatchIndex].teams.away.logo" [src]="matches[currentMatchIndex].teams.away.logo" class="carousel-item1-item-title-img"
+                        style="max-width: 24px; max-height: 24px; width: auto; height: auto; visibility: visible;">
+                    </div>
+                    <div class="carousel-fecha-restante-contador">
+                      <div></div>
+                    </div>
+                  </div>
+                  <div class="quiengana">¿Quién ganará el encuentro?</div>
+                  <div class="carousel-item1-item-equipo" [@fadeInOut]="predictionResults ? 'hidden' : 'visible'">
+                    <div class="prediction-buttons-container" *ngIf="!predictionResults">
+                      <button *ngIf="matches[currentMatchIndex].teams.home.name" class="prediction-button home-team" (click)="predictOutcome()">
+                        {{ matches[currentMatchIndex].teams.home.name }}
+                      </button>
+                      <button class="prediction-button draw" (click)="predictOutcome()">
+                        Empate
+                      </button>
+                      <button *ngIf="matches[currentMatchIndex].teams.away.name" class="prediction-button away-team" (click)="predictOutcome()">
+                        {{ matches[currentMatchIndex].teams.away.name }}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="prediction-results" [@fadeInOut]="showPrediction ? 'visible' : 'hidden'">
+                    <div class="prediction-bar">
+                      <div class="prediction-bar-segment home" *ngIf="predictionResults" [style.width.%]="parsePercentage(predictionResults.team1)">
+                        {{ predictionResults.team1 }}%
+                      </div>
+                      <div class="prediction-bar-segment draw" *ngIf="predictionResults" [style.width.%]="parsePercentage(predictionResults.draw)">
+                        {{ predictionResults.draw }}%
+                      </div>
+                      <div class="prediction-bar-segment away" *ngIf="predictionResults" [style.width.%]="parsePercentage(predictionResults.team2)">
+                        {{ predictionResults.team2 }}%
+                      </div>
+                    </div>
+                    <div class="prediction-labels" *ngIf="predictionResults">
+                      <span class="label-home">{{ matches[currentMatchIndex].teams.home.name }}</span>
+                      <span class="label-draw">Empate</span>
+                      <span class="label-away">{{ matches[currentMatchIndex].teams.away.name }}</span>
+                    </div>
+                  </div>
+                  <div class="nada"></div>
+                  <div class="fecha">{{ matches[currentMatchIndex].date | date: 'fullDate':'es' }} | {{ matches[currentMatchIndex].date | date: 'shortTime':'es' }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="prev" (click)="prevMatch()">&#10094;</button>
+          <button class="next" (click)="nextMatch()">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  

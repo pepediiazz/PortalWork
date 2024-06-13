@@ -1,0 +1,159 @@
+.favorites-container {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  display: none; /* Inicialmente oculto */
+}
+
+.favorites-container.visible {
+  display: block; /* Mostrar cuando esté visible */
+}
+
+.liga-popular-primera {
+  margin-bottom: 16px;
+  transition: min-height .25s ease;
+}
+
+.liga-popular-nombre {
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  padding-left: 10px;
+  padding-bottom: 5px;
+  border-top-left-radius: 5px; 
+  border-top-right-radius: 4px;
+}
+
+.liga-popular-nombre .logo-liga {
+  max-width: 22px;
+  max-height: 22px;
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.liga-popular-nombre-enlace {
+  color: #505050;
+  font-size: 18px; /* Tamaño de fuente más grande */
+  font-weight: 500;
+}
+
+.liga-popular-partidos-lista {
+  background-color: #fff;
+}
+
+.liga-popular-partido {
+  background-color: #fff;
+  height: 65px;    
+  margin-bottom: 1px;
+  width: 100%;
+}
+
+.liga-popular-partido2 {
+  border-left: 2px solid #fff0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.liga-popular-partido2:hover {
+  background-color: #f5f5f5;
+}
+
+.liga-popular-componente {
+  display: grid;
+  grid-template-rows: 14px 34px 14px;
+  grid-template-areas:
+    "status status status status status"
+    "home-competitor-name home-competitor-logo score away-competitor-logo away-competitor-name"
+    "description description description description description";
+  grid-template-columns: 1fr 32px 80px 32px 1fr;
+  color: #505050;
+  cursor: pointer;
+  text-decoration: none;
+  grid-row-gap: 1px;
+  justify-content: center;
+  padding: 0 2px;
+  place-items: center;
+  width: 100%;
+}
+
+.liga-popular-equipo-local {
+  white-space: inherit;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #505050;
+  grid-area: home-competitor-name;
+  padding: 0 12px;
+  text-align: right;
+  width: 100%;
+  font-weight: 400;
+}
+
+.liga-popular-equipo-local-logo {
+  max-width: 34px;
+  max-height: 34px;
+  width: auto;
+  height: auto;
+  visibility: visible;
+  align-items: center;
+  display: flex;
+  grid-area: home-competitor-logo;
+  justify-content: center;
+}
+
+.tiempo {
+  color: #505050;
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  grid-area: score;
+  padding: 0 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.liga-popular-equipo-visitante-logo {
+  max-width: 34px;
+  max-height: 34px;
+  width: auto;
+  height: auto;
+  visibility: visible;
+  grid-area: away-competitor-logo;
+  align-items: center;
+  justify-content: center;
+}
+
+.liga-popular-equipo-visitante {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  grid-area: away-competitor-name;
+  text-align: left;
+  box-sizing: border-box;
+  color: #505050;
+  padding: 0 14px;
+  width: 100%;
+  font-weight: 400;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  padding: 0;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.favorite-button img {
+  width: 20px;
+  height: 20px;
+}
+.favorites-container.visible{
+  margin-bottom: 40px;
+}

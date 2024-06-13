@@ -1,0 +1,16 @@
+<div class="rugby">
+  <app-header4 (toggleFavoritesVisibility)="onToggleFavoritesVisibility()"></app-header4>
+  <div class="main-top"></div>
+  <div class="main-mid"></div>
+  <div class="main-down">
+    <div class="main-down-left">
+      <app-ligas-populares-rugby></app-ligas-populares-rugby>
+    </div>
+    <div class="main-down-right">
+      <app-rugby-carousel></app-rugby-carousel>
+      <app-rugby-prediction-carousel></app-rugby-prediction-carousel>
+      <app-rugby-news></app-rugby-news>
+      <app-rugby-favorites #favoritesComponent [isVisible]="isFavoritesVisible"></app-rugby-favorites>
+    </div>
+  </div>
+</div>

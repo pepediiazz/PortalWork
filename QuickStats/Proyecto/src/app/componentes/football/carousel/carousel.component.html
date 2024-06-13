@@ -1,0 +1,46 @@
+<div class="partidos-proximos" *ngIf="matches.length > 0">
+  <div class="partidos-proximos-featured">
+    <div class="partidos-proximos-featured-title">Featured Match</div>
+    <div class="carrousel-partidos-proximos">
+      <div class="carrousel1">
+        <div class="carousel-item" *ngIf="matches.length > 0" [@slideInOut]="animationState">
+          <div class="carousel-item1" style="order: 0;">
+            <div class="carousel-item1-item">
+              <div class="carousel-item1-item-title">
+                <img [src]="matches[currentMatchIndex].league.logo" class="carousel-item1-item-title-img" style="max-width: 20px; max-height: 20px; width: auto; height: auto; visibility: visible;">
+                <a class="carousel-link" style="color: #505050; cursor: pointer; text-decoration: none;">{{ matches[currentMatchIndex].league.name }}</a>
+              </div>
+              <a class="carousel-fecha-restante">
+                <div class="carousel-fecha-restante-arriba"></div>
+                <div class="carousel-fecha-restante-contador">
+                  <div></div>
+                </div>
+              </a>
+              <a class="carousel-item1-item-equipo">
+                <div class="carousel-item1-item-equipos">
+                  <div class="carousel-item1-item-equipo-home">
+                    <img [src]="matches[currentMatchIndex].teams.home.logo" class="carousel-item1-item-equipo-home-img" style="max-width: 80px; max-height: 80px; width: auto; height: auto; z-index: 1; position: relative; right: -15px;visibility: visible;">
+                    <div class="carousel-item1-item-equipo-home-nombre" style="background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));background-color: rgb(127, 151, 171);max-width: 280px;">
+                      <div class="carousel-item1-item-equipo-home-nombre-text" style="min-width: 259px;">{{ matches[currentMatchIndex].teams.home.name }}</div>
+                    </div>
+                  </div>
+                  <div class="carousel-item1-item-equipo-vs" style="left: 27px;">VS</div>
+                  <div class="carousel-item1-item-equipo-away">
+                    <img [src]="matches[currentMatchIndex].teams.away.logo" class="carousel-item1-item-equipo-away-img" style="max-width: 80px; max-height: 80px; width: auto; height: auto; visibility: visible;">
+                    <div class="carousel-item1-item-equipo-away-nombre" style="background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));background-color: rgb(199, 208, 216);max-width: 250px;">
+                      <div class="carousel-item1-item-equipo-away-nombre-text" style="min-width: 250px">{{ matches[currentMatchIndex].teams.away.name }}</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="nada"></div>
+              <div class="fecha">{{ matches[currentMatchIndex].fixture.date | date: 'fullDate':'es' }} | {{ matches[currentMatchIndex].fixture.date | date: 'shortTime':'es' }} | {{ matches[currentMatchIndex].fixture.venue.name }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="prev" (click)="prevMatch()">&#10094;</button>
+      <button class="next" (click)="nextMatch()">&#10095;</button>
+    </div>
+  </div>
+</div>

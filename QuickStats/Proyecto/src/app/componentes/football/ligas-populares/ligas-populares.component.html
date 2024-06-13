@@ -1,0 +1,64 @@
+<div class="ligas-populares">
+  <div class="header-container">
+    <p>Ligas populares de Fútbol</p>
+    <div class="date-picker-container">
+      <button class="date-nav-button" (click)="changeDate(-1)">&#8249;</button>
+      <input type="text" [value]="formatSelectedDate()" [class.hidden]="showDatePicker" readonly />
+      <input type="date" [value]="selectedDate" (change)="onDateChange($event)" [class.visible]="showDatePicker" [class.hidden]="!showDatePicker" lang="es" />
+      <button class="date-nav-button" (click)="changeDate(1)">&#8250;</button>
+    </div>
+    <button class="toggle-button" style="width: 24px; height: 18px;" (click)="toggleDatePicker()">
+      <img src="../../../../assets/images/actualizar.png" alt="Toggle Date Picker" style="width: 24px; height: 24px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+    </button>
+  </div>
+  <div *ngFor="let leagueId of ligaIds">
+    <div *ngIf="footbalData[leagueId] && footbalData[leagueId].length > 0; else noMatchesTemplate">
+      <div class="liga-popular-primera">
+        <div class="liga-popular-nombre">
+          <img [src]="footbalData[leagueId][0].league.logo" class="logo-liga" alt="{{ footbalData[leagueId][0].league.name }}" style="max-width: 32px; max-height: 32px; width: auto; height: auto; visibility: visible; position: relative; left: 18px; top:9px;">
+          <a class="liga-popular-nombre-enlace">{{ footbalData[leagueId][0].league.name }}</a>
+          <div class="liga-popular-nombre-pais">{{ footbalData[leagueId][0].league.country }}</div>
+        </div>
+        <div class="liga-popular-primera-equipos">
+          <span class="liga-popular-equipos"></span>
+          <div class="liga-popular-equipos-primero">
+            <div class="Collapso">
+              <div class="liga-popular-partidos-lista">
+                <div class="liga-popular-partido" *ngFor="let match of footbalData[leagueId]" (click)="openModal(match)">
+                  <div class="liga-popular-partido2">
+                    <a class="liga-popular-componente">
+                      <div class="liga-popular-equipo-local">{{ match.teams.home.name }}</div>
+                      <img [src]="match.teams.home.logo" class="liga-popular-equipo-local-logo">
+                      <div class="tiempo">{{ getStatusOrScore(match) }}</div>
+                      <img [src]="match.teams.away.logo" class="liga-popular-equipo-visitante-logo">
+                      <div class="liga-popular-equipo-visitante">{{ match.teams.away.name }}</div>
+                    </a>
+                    <button class="favorite-button" (click)="toggleFavorite(match); $event.stopPropagation();" >
+                      <img [src]="isFavorite(match) ? '../../../../assets/images/estrella.png' : '../../../../assets/images/estrella2.png'" alt="Toggle Favorite" style="height: 20px; width: 20px;">
+                    </button>
+                  </div>
+                </div>
+                <a class="liga-popular-partidos-lista-enlace" [routerLink]="['/football/widget', footbalData[leagueId][0].league.id, footbalData[leagueId][0].league.season]">
+                  {{ footbalData[leagueId][0].league.name }} Clasificaciones
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noMatchesTemplate>
+      <div class="liga-popular-primera" *ngIf="getLeagueInfo(leagueId) as league">
+        <div class="liga-popular-nombre">
+          <img [src]="league.logo" class="logo-liga" alt="{{ league.name }}" style="max-width: 32px; max-height: 32px; width: auto; height: auto; visibility: visible; position: relative; left: 18px; top:9px;">
+          <a class="liga-popular-nombre-enlace">{{ league.name }}</a>
+          <div class="liga-popular-nombre-pais">{{ league.country }}</div>
+        </div>
+        <div class="mensaje-ligas">No hay partidos programados</div>
+
+        <a class="liga-popular-partidos-lista-enlace" [routerLink]="['/football/widget', league.id, 2023]">{{ league.name }} Clasificaciones</a>
+      </div>
+    </ng-template>
+  </div>
+  <app-modal [match]="selectedMatch" [visible]="isModalVisible" (closeModal)="closeModal()"></app-modal>
+</div>

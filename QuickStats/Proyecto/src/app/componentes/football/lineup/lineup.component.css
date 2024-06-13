@@ -1,0 +1,104 @@
+.lineup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-logos {
+  display: flex;
+  justify-content: space-between;
+  width: 59%;
+  margin-bottom: 10px;
+}
+
+.team-logo {
+  text-align: center;
+}
+
+.team-logo img {
+  width: 60px;
+  height: 60px;
+}
+
+.fields-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  width: 50%;
+  height: 600px;
+  background-color: green;
+  background-size: cover;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.home-field {
+  background-image: url('../../../../assets/images/field.png');
+}
+
+.away-field {
+  background-image: url('../../../../assets/images/field.png');
+}
+
+.team-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.player {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  margin-top: 5%; /* Ajuste adicional para bajar las posiciones */
+}
+
+.player-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.home-circle {
+  background-color: #1e90ff;
+}
+
+.away-circle {
+  background-color: #ff4500;
+}
+
+.player-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.player-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-name,
+.last-name {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  z-index: 1;
+}

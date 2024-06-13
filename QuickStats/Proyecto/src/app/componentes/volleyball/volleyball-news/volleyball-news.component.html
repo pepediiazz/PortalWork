@@ -1,0 +1,21 @@
+<div class="news-section">
+    <p class="titulo">Noticias de Voleibol</p>
+    <div *ngIf="loading">Cargando...</div>
+    <div *ngIf="!loading && displayedArticles.length > 0; else noNews">
+      <div class="news-articles-container">
+        <div *ngFor="let article of displayedArticles; let i = index" class="news-article" @newsAnimation>
+          <img *ngIf="article.urlToImage" [src]="article.urlToImage" alt="{{ article.title }}" class="news-image">
+          <p class="article">{{ article.title }}</p>
+          <div class="read-more-container">
+            <a [href]="article.url" target="_blank" class="read-more-btn">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <div class="load-more-container">
+        <button (click)="loadMoreNews()" class="load-more-btn">Ver más noticias</button>
+      </div>
+    </div>
+    <ng-template #noNews>
+    </ng-template>
+  </div>
+  

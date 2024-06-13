@@ -1,0 +1,38 @@
+<div class="lineup" *ngIf="formation && lineup">
+  <div class="team-logos">
+    <div class="team-logo">
+      <img [src]="lineup.home.team.logo" alt="{{ lineup.home.team.name }}">
+    </div>
+    <div class="team-logo">
+      <img [src]="lineup.away.team.logo" alt="{{ lineup.away.team.name }}">
+    </div>
+  </div>
+  <div class="fields-container">
+    <div class="field home-field">
+      <div class="team-container">
+        <div class="player" *ngFor="let player of lineup.home.startXI; let i = index" [ngStyle]="getPlayerStyle(i, 'home')">
+          <div class="player-circle home-circle">
+            <span class="player-number">{{ player.player.number }}</span>
+          </div>
+          <div class="player-name">
+            <p class="first-name">{{ getFirstName(player.player.name) }}</p>
+            <p class="last-name">{{ getLastName(player.player.name) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="field away-field">
+      <div class="team-container">
+        <div class="player" *ngFor="let player of lineup.away.startXI; let i = index" [ngStyle]="getPlayerStyle(i, 'away')">
+          <div class="player-circle away-circle">
+            <span class="player-number">{{ player.player.number }}</span>
+          </div>
+          <div class="player-name">
+            <p class="first-name">{{ getFirstName(player.player.name) }}</p>
+            <p class="last-name">{{ getLastName(player.player.name) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

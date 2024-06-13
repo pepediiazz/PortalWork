@@ -1,0 +1,16 @@
+<div class="basketball">
+  <app-header2 (toggleFavoritesVisibility)="onToggleFavoritesVisibility()"></app-header2>
+  <div class="main-top"></div>
+  <div class="main-mid"></div>
+  <div class="main-down">
+    <div class="main-down-left">
+      <app-ligas-populares-basketball></app-ligas-populares-basketball>
+    </div>
+    <div class="main-down-right">
+      <app-basketball-carousel></app-basketball-carousel>
+      <app-basketball-prediction-carousel></app-basketball-prediction-carousel>
+      <app-basketball-news></app-basketball-news>
+      <app-basketball-favorites #favoritesComponent [isVisible]="isFavoritesVisible"></app-basketball-favorites>
+    </div>
+  </div>
+</div>

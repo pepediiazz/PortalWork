@@ -1,0 +1,93 @@
+.timeline {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 0px;
+    white-space: nowrap;
+    position: relative;
+    height: 148px;
+  }
+  
+  .timeline-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
+  }
+  
+  .timeline-inner::before {
+    content: '';
+    position: absolute;
+    top: 65%;
+    left: 28px;
+    height: 2px;
+    background: #ddd;
+    z-index: 0;
+    width: 96%;
+  }
+  
+  .timeline-event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .timeline-event .event-time {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .timeline-event .event-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .timeline-event .event-icon img:hover {
+    transform: scale(1.2);
+  }
+  
+  .timeline-event .event-icon {
+    position: relative;
+  }
+  
+  .timeline-event .event-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
+  .timeline-event .event-icon:hover::after {
+    display: block;
+    opacity: 1;
+  }
+  .timeline-event:hover .event-icon::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  
+  .timeline-event:first-child:hover .event-icon::after {
+    transform: translateX(0) translateY(-10px);
+  }
+  
+  .timeline-event:last-child:hover .event-icon::after {
+    transform: translateX(-100%) translateY(-10px);
+  }

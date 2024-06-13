@@ -1,0 +1,89 @@
+.news-section {
+    margin-bottom: 24px;
+  }
+  
+  .news-articles-container {
+    display: flex;
+    gap: 16px; /* Espacio entre las noticias */
+  }
+  
+  .news-article {
+    border: 1px solid #dfdfdf;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    flex: 1; /* Cada noticia toma el mismo ancho */
+    max-width: calc(33.333% - 10.666px); /* Ajustar el ancho para tres columnas */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .news-article h3 {
+    margin-top: 8px; /* Reducir el margen superior */
+    margin-bottom: 8px; /* Reducir el margen inferior */
+  }
+  
+  .news-article a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .news-article a:hover {
+    text-decoration: underline;
+  }
+  
+  .news-image {
+    width: 100%;
+    height: 200px; /* Tamaño uniforme para todas las imágenes */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px; /* Reducir el margen inferior para acercar el título */
+  }
+  
+  .titulo {
+    margin: 0px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .load-more-btn {
+    padding: 7px 20px;
+    border: 2px solid #505050;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    color: #505050;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+  }
+  
+  .load-more-btn:hover {
+    background-color: #505050;
+    color: #fff;
+  }
+  
+  .article {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px; /* Reducir el margen superior */
+    margin-bottom: 8px; /* Reducir el margen inferior */
+  }
+  
+  .read-more-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto; /* Asegurar que el botón esté siempre en la parte inferior */
+  }
+  

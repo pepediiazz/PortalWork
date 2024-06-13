@@ -1,0 +1,11 @@
+<div class="timeline" *ngIf="match && match.events">
+    <div class="timeline-inner">
+      <div *ngFor="let event of match.events" class="timeline-event">
+        <div class="event-time">{{ event.time.elapsed }}'</div>
+        <div class="event-icon" [title]="getEventDetail(event)">
+          <img [src]="getEventIcon(event)" alt="{{ event.type }}">
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,356 @@
+/* Estilos generales */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.ligas-populares p {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+}
+
+.liga-popular-primera {
+    margin-bottom: 16px;
+    transition: min-height .25s ease;
+}
+
+.liga-popular-nombre {
+    background-color: #fff;
+    display: grid;
+    grid-template-areas:
+        "star logo competition-name loader-indicator"
+        "star logo country-name loader-indicator";
+    grid-template-columns: 32px 32px auto;
+    grid-template-rows: 18px 18px;
+    height: 36px;
+    margin-bottom: 1px;
+    place-items: center;
+    width: 100%;
+    border-top-left-radius: 5px; 
+    border-top-right-radius: 4px;
+}
+
+.liga-popular-nombre-enlace {
+    color: #505050;
+    font-size: 13px;
+    grid-area: competition-name;
+    justify-self: flex-start;
+    padding: 0 4px;
+    white-space: nowrap;
+}
+
+.liga-popular-nombre-pais {
+    color: #7f97ab;
+    font-size: 13px;
+    grid-area: country-name;
+    justify-self: flex-start;
+    padding: 0 4px;
+    white-space: nowrap;
+}
+
+.liga-popular-partidos-lista-enlace {
+    color: #7f97ab;
+    font-size: 13px;
+    font-weight: 500;
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    margin-bottom: 1px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.liga-popular-partido {
+    background-color: #fff;
+    height: 65px;    
+    margin-bottom: 1px;
+    width: 100%;
+}
+
+.liga-popular-partido2 {
+    border-left: 2px solid #fff0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.liga-popular-partido2:hover {
+    background-color: #f5f5f5;
+}
+
+.liga-popular-componente {
+    display: grid;
+    grid-template-rows: 14px 34px 14px;
+    grid-template-areas:
+        "status status status status status"
+        "home-competitor-name home-competitor-logo score away-competitor-logo away-competitor-name"
+        "description description description description description";
+    grid-template-columns: 1fr 32px 80px 32px 1fr;
+    color: #505050;
+    cursor: pointer;
+    text-decoration: none;
+    grid-row-gap: 1px;
+    justify-content: center;
+    padding: 0 2px;
+    place-items: center;
+    width: 100%;
+}
+
+.liga-popular-equipo-local {
+    white-space: inherit;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: #505050;
+    grid-area: home-competitor-name;
+    padding: 0 12px;
+    text-align: right;
+    width: 100%;
+    font-weight: 400;
+}
+
+.liga-popular-equipo-local-logo {
+    max-width: 34px;
+    max-height: 34px;
+    width: auto;
+    height: auto;
+    visibility: visible;
+    align-items: center;
+    display: flex;
+    grid-area: home-competitor-logo;
+    justify-content: center;
+}
+
+.tiempo {
+    color: #505050;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    grid-area: score;
+    padding: 0 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.liga-popular-equipo-visitante-logo {
+    max-width: 34px;
+    max-height: 34px;
+    width: auto;
+    height: auto;
+    visibility: visible;
+    grid-area: away-competitor-logo;
+    align-items: center;
+    justify-content: center;
+}
+
+.liga-popular-equipo-visitante {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
+    grid-area: away-competitor-name;
+    text-align: left;
+    box-sizing: border-box;
+    color: #505050;
+    padding: 0 14px;
+    width: 100%;
+    font-weight: 400;
+}
+
+.date-picker-container {
+    display: flex;
+    align-items: center;
+    background-color: #43494d;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;    
+    overflow: hidden;
+    position: relative;
+    right: -20px;
+
+}
+
+.date-nav-button {
+    background: none;
+    border: none;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 5px;
+}
+
+input[type="date"],
+input[type="text"] {
+    background-color: #43494d;
+    padding: 5px;
+    font-family: Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    outline: none;
+    width: 120px; /* Ajusta el tamaño según sea necesario */
+    text-align: center;
+}
+
+input[type="text"] {
+    cursor: pointer;
+}
+
+input[type="date"] {
+    display: none;
+    width: 140px; /* Ajusta el tamaño según sea necesario */
+    padding: 0;
+}
+
+input[type="date"]:focus {
+    display: inline-block;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.formatted-date {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.view-details-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Media Queries para Responsividad */
+
+@media (max-width: 768px) {
+    .liga-popular-componente {
+        grid-template-columns: 1fr 24px 60px 24px 1fr;
+        grid-row-gap: 2px;
+        padding: 0 1px;
+    }
+
+    .liga-popular-nombre {
+        grid-template-columns: 24px 24px auto;
+    }
+
+    .date-nav-button {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    input[type="date"],
+    input[type="text"] {
+        width: 100px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .liga-popular-componente {
+        grid-template-columns: 1fr 20px 50px 20px 1fr;
+        grid-row-gap: 1px;
+        padding: 0;
+    }
+
+    .liga-popular-nombre {
+        grid-template-columns: 20px 20px auto;
+        height: 30px;
+    }
+
+    .date-nav-button {
+        padding: 3px;
+        font-size: 14px;
+    }
+
+    input[type="date"],
+    input[type="text"] {
+        width: 80px;
+        font-size: 10px;
+    }
+
+    .tiempo {
+        font-size: 14px;
+    }
+
+    .liga-popular-equipo-local,
+    .liga-popular-equipo-visitante {
+        font-size: 12px;
+        padding: 0 8px;
+    }
+}
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+input[type="date"].visible {
+  display: flex;
+}
+
+input[type="text"].hidden {
+  display: none;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-top-left-radius: 5px;
+}
+.mensaje-ligas {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  color: #7f97ab;
+  font-size: 13px;
+  font-weight: 500;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px; /* Agrega algo de relleno para una mejor apariencia */
+  box-sizing: border-box; /* Asegura que el relleno no afecte el ancho total */
+}
+.favorite-button {
+    background: none;
+    border: none;
+    padding: 0;
+    padding-right: 10px;
+    cursor: pointer;
+  }
+  
+  .favorite-button img {
+    width: 20px;
+    height: 20px;
+  }
+  

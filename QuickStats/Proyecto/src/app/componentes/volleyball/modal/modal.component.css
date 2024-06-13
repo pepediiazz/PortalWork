@@ -1,0 +1,162 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 0.5s;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .league-logo {
+    position: relative;
+    width: 40px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .match-info {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .match-info h2 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .match-info p {
+    margin: 2px 0;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .teams-score {
+    display: flex;
+    align-items: center;
+  }
+  
+  .team {
+    text-align: center;
+    margin: 0 10px;
+  }
+  
+  .team p {
+    margin: 0;
+  }
+  
+  .team-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+  }
+  
+  .score h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .match-details {
+    margin-top: 10px;
+  }
+  
+  .details, .scores, .stats {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 5px;
+  }
+  
+  .details h3, .scores h3, .stats h3 {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .details-grid, .scores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .details-grid div, .scores-grid div {
+    padding: 5px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .details-grid div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .details-grid .icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+  
+  .possession-container {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .other-stats-container {
+    margin-top: 15px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0); }
+  }
+  .events h3 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 1em;
+    color: #333;
+  }
+  #Alineaciones {
+    margin-bottom: 0px;
+  }
+  
+  .stro strong{
+    margin-right: 5px;
+  }

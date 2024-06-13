@@ -1,0 +1,61 @@
+<div class="modal" *ngIf="visible">
+  <div class="modal-content">
+    <span class="close" (click)="close()">&times;</span>
+    <div *ngIf="match">
+      <div class="modal-header">
+        <img [src]="match.league.logo" alt="{{ match.league.name }}" class="league-logo">
+        <div class="match-info">
+          <h2>{{ match.league.name }}</h2>
+          <p>{{ match.league.country }}</p>
+          <p>{{ match.fixture.date | date: 'fullDate':'':'es' }}</p>
+        </div>
+        <div class="teams-score">
+          <div class="team">
+            <img [src]="match.teams.home.logo" alt="{{ match.teams.home.name }}" class="team-logo">
+            <p>{{ match.teams.home.name }}</p>
+          </div>
+          <div class="score">
+            <h2>{{ getCurrentScore() }}</h2>
+          </div>
+          <div class="team">
+            <img [src]="match.teams.away.logo" alt="{{ match.teams.away.name }}" class="team-logo">
+            <p>{{ match.teams.away.name }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="match-details">
+        <div class="details">
+          <h3>Detalles del Partido</h3>
+          <div class="details-grid">
+            <div><img src="assets/images/procedimiento.png" alt="Estado" class="icon"> {{ translateStatus(match.fixture.status.long) }}</div>
+            <div><img src="assets/images/calendario.png" alt="Fecha" class="icon">  {{ match.fixture.date | date: 'short' }}</div>
+            <div><img src="assets/images/arbitro-de-futbol.png" alt="Árbitro" class="icon">  {{ match.fixture.referee || 'Desconocido' }}</div>
+            <div><img src="assets/images/estadio.png" alt="Estadio" class="icon">  {{ match.fixture.venue.name }}, {{ match.fixture.venue.city }}</div>
+            <div class="stro"><strong>Medio tiempo:</strong> {{ match.score.halftime.home }} - {{ match.score.halftime.away }}</div>
+            <div class="stro"><strong>Tiempo completo:</strong> {{ match.score.fulltime.home }} - {{ match.score.fulltime.away }}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="hasStarted()">
+        <div class="stats" *ngIf="match.statistics">
+          <div class="possession-container">
+            <h3>Posesión</h3>
+            <app-match-possession [match]="match"></app-match-possession>
+          </div>
+          <div class="other-stats-container">
+            <h3>Otras Estadísticas</h3>
+            <app-match-stats [match]="match"></app-match-stats>
+          </div>
+        </div>
+        <div class="events" *ngIf="match.events">
+          <h3>Eventos del Partido</h3>
+          <app-match-timeline [match]="match"></app-match-timeline>
+        </div>
+        <h3 id="Alineaciones">Alineaciones</h3>
+        <div class="lineups" *ngIf="match.lineups">
+          <app-lineup [formation]="match.lineups[0].formation || '4-4-2'" [lineup]="{ home: match.lineups[0], away: match.lineups[1] }"></app-lineup>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

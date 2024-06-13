@@ -1,0 +1,74 @@
+<div class="ligas-populares">
+  <div class="header-container">
+    <p>Ligas populares de Volleyball</p>
+    <div class="date-picker-container">
+      <button class="date-nav-button" (click)="changeDate(-1)">&#8249;</button>
+      <input type="text" 
+             [value]="formatSelectedDate()" 
+             [class.hidden]="showDatePicker" 
+             readonly />
+      <input type="date" 
+             [value]="selectedDate" 
+             (change)="onDateChange($event)" 
+             [class.visible]="showDatePicker" 
+             [class.hidden]="!showDatePicker" 
+             lang="es" />
+      <button class="date-nav-button" (click)="changeDate(1)">&#8250;</button>
+    </div>
+    <button class="toggle-button" style="width: 24px; height: 18px;" (click)="toggleDatePicker()">
+      <img src="../../../../assets/images/actualizar.png" alt="Toggle Date Picker" style="width: 24px; height: 24px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+    </button>
+  </div>
+  <div *ngFor="let leagueId of ligaIds">
+    <div *ngIf="volleyballData[leagueId] && volleyballData[leagueId].length > 0; else noMatchesTemplate">
+      <div class="liga-popular-primera">
+        <div class="liga-popular-nombre">
+          <img [src]="volleyballData[leagueId][0].league.logo" class="logo-liga" alt="{{ volleyballData[leagueId][0].league.name }}" style="max-width: 32px; max-height: 32px; width: auto; height: auto; visibility: visible; position: relative; left: 18px; top:9px;">
+          <a class="liga-popular-nombre-enlace">{{ volleyballData[leagueId][0].league.name }}</a>
+          <div class="liga-popular-nombre-pais">{{ volleyballData[leagueId][0].country.name }}</div>
+        </div>
+        <div class="liga-popular-primera-equipos">
+          <span class="liga-popular-equipos"></span>
+          <div class="liga-popular-equipos-primero">
+            <div class="Collapso">
+              <div class="liga-popular-partidos-lista">
+                <div class="liga-popular-partido" *ngFor="let game of volleyballData[leagueId]" (click)="openModal(game)">
+                  <div class="liga-popular-partido2">
+                    <a class="liga-popular-componente">
+                      <div class="liga-popular-equipo-local">{{ game.teams.home.name }}</div>
+                      <img [src]="game.teams.home.logo" class="liga-popular-equipo-local-logo">
+                      <div class="tiempo">
+                        {{ getStatusOrScore(game) }}
+                      </div>
+                      <img [src]="game.teams.away.logo" class="liga-popular-equipo-visitante-logo">
+                      <div class="liga-popular-equipo-visitante">{{ game.teams.away.name }}</div>
+                    </a>
+                    <button class="favorite-button" (click)="toggleFavorite(game, $event)">
+                      <img [src]="isFavorite(game) ? '../../../../assets/images/estrella.png' : '../../../../assets/images/estrella2.png'" alt="Toggle Favorite">
+                    </button>
+                  </div>
+                </div>
+                <a class="liga-popular-partidos-lista-enlace"
+                [routerLink]="['/volleyball/widget', volleyballData[leagueId][0].league.id, volleyballData[leagueId][0].league.season]">
+               {{ volleyballData[leagueId][0].league.name }} Clasificaciones
+             </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noMatchesTemplate>
+      <div class="liga-popular-primera" *ngIf="getLeagueInfo(leagueId) as league">
+        <div class="liga-popular-nombre">
+          <img [src]="league.logo" class="logo-liga" alt="{{ league.name }}" style="max-width: 32px; max-height: 32px; width: auto; height: auto; visibility: visible; position: relative; left: 18px; top:9px;">
+          <a class="liga-popular-nombre-enlace">{{ league.name }}</a>
+          <div class="liga-popular-nombre-pais">{{ league.country }}</div>
+        </div>
+        <div class="mensaje-ligas">No hay partidos programados</div>
+        <a class="liga-popular-partidos-lista-enlace" [routerLink]="['/volleyball/widget', league.id, 2023]">{{ league.name }} Clasificaciones</a>
+      </div>
+    </ng-template>
+  </div>
+  <app-modal [game]="selectedGame" [visible]="isModalVisible" (closeModal)="closeModal()"></app-modal>
+</div>

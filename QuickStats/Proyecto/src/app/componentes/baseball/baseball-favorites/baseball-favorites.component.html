@@ -1,0 +1,31 @@
+<div class="favorites-container" [class.visible]="isVisible">
+    <div *ngIf="favorites.length > 0; else noFavorites">
+      <div class="liga-popular-primera">
+        <div class="liga-popular-nombre">
+          <img src="/assets/images/estrella2.png" class="logo-liga" alt="Favoritos" style="max-width: 22px; max-height: 22px; width: auto; height: auto; visibility: visible; position: relative;">
+          <a class="liga-popular-nombre-enlace">Partidos en favoritos</a>
+        </div>
+        <div class="liga-popular-partidos-lista">
+          <div class="liga-popular-partido" *ngFor="let game of favorites" (click)="openModal(game)">
+            <div class="liga-popular-partido2">
+              <a class="liga-popular-componente">
+                <div class="liga-popular-equipo-local">{{ game.teams.home.name }}</div>
+                <img [src]="game.teams.home.logo" class="liga-popular-equipo-local-logo">
+                <div class="tiempo">{{ getStatusOrScore(game) }}</div>
+                <img [src]="game.teams.away.logo" class="liga-popular-equipo-visitante-logo">
+                <div class="liga-popular-equipo-visitante">{{ game.teams.away.name }}</div>
+              </a>
+              <button class="favorite-button" (click)="removeFavorite(game.id)">
+                <img src="/assets/images/borrar.png" alt="Eliminar de Favoritos">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #noFavorites>
+      <div>No tienes partidos favoritos.</div>
+    </ng-template>
+    <app-modal3 [game]="selectedGame" [visible]="isModalVisible" (closeModal)="closeModal()"></app-modal3>
+  </div>
+  

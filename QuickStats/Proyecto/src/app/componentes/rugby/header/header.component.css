@@ -1,0 +1,424 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Söhne, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    background-color: #ecf0f3;
+}
+
+header {
+    width: 100%;
+    height: 102px; /* Ajusta la altura según sea necesario */
+    background-color: #f0f0f0; /* Color de fondo del header */
+    display: flex;
+    flex-direction: column;
+}@media (max-width: 768px) {
+    header {
+        width: max-content;
+    }
+}
+
+/* NAVEGADOR */
+
+
+.down {
+    height: 62px;
+    background-color: #16181b; /* Color del segundo div */
+    
+}
+
+.logo-categorias_noticias {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1224px;
+    height: 72px;
+    width: 100%
+    
+}
+
+.logo {
+    align-items: center;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    display: flex;
+    height: 72px;
+    justify-content: center;
+    padding-bottom: 10px;
+    position: relative;
+    width: 132px;
+}
+.logo-enlace {
+    bottom: -4px;
+    height: 85px;
+    position: absolute;
+    width: 132px;
+    z-index: 1;
+}/*
+#29b3e1
+*/
+.categorias {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    height: 60px;
+}
+.categoria {
+    display: flex;
+    justify-content: space-between; /* Esto distribuye el espacio entre los elementos */
+    align-items: center; /* Esto alinea los elementos verticalmente */
+    height: 60px;
+    margin-left: 15px;
+    
+}
+
+.categoria-link{
+    color: #7f97ab;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 10px; /* Espacio entre los enlaces */
+    margin-left: 20px;
+
+}
+
+
+.categoria-extensible {
+    margin-top: 4px;
+    position: relative;
+}
+
+
+.categoria-link-link:hover {
+    color: #29b3e1; /* Cambia el color del texto cuando el cursor está encima del enlace */
+}
+.categoria-link-link.activo {
+    color: #fff;
+    height: 60px;
+    line-height: 65px;
+    border-bottom: 3px solid #02a9f4;
+}
+
+.categoria-link-link.activo:hover {
+    color: #29b3e1; /* Cambia el color del texto cuando el cursor está encima del enlace */
+
+}
+
+.categoria-link-link:hover img {
+    content: url('../../../../assets/images/estrella.png');
+}
+.categoria-link-extensible {
+    color: #7f97ab;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 24px;
+    margin-right: 10px; /* Espacio entre los enlaces */
+    margin-left: 10px;
+}
+
+
+#puntos {
+    height: 14px;
+    line-height: 0px;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+
+
+.menu-deportes {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding-top: 6px;    
+    padding-bottom: 6px;    
+    min-width: 135px;
+    top: 58px;
+    z-index: 30;
+    width: 90px; /* Ajusta el ancho del menú según sea necesario */
+    height: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Define la sombra con color negro y 3% de transparencia */
+    border-radius: 1px;
+
+
+}
+
+.menu-deportes.show {
+    display: block;
+}
+
+.menu-deportes ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Añade un margen cero para evitar el espacio adicional */
+}
+
+.menu-deportes ul li {
+    cursor: pointer;
+    display: block; /* Cambia la visualización a bloque para que cada elemento se muestre en una línea diferente */
+    padding: 12px; /* Agrega un espacio entre cada elemento de la lista */
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.menu-deportes ul li:hover {
+    color: #29b3e1; /* Cambia el color del texto cuando el cursor está encima del enlace */
+}
+
+.icono-favoritos {
+    margin-right: 2px; /* Ajusta el espacio entre el icono y el texto según sea necesario */
+    vertical-align: middle; /* Alinea verticalmente el icono */
+}
+
+.texto-favoritos {
+    display: inline-block; /* Asegura que el contenedor del texto tenga el mismo comportamiento que el icono */
+    vertical-align: middle; /* Alinea verticalmente el texto */
+}
+
+
+
+/* BUSCADOR */
+
+
+.buscador {
+    align-items: center;
+    display: flex;
+    margin: 0 14px;
+    width: 260px;
+    z-index: 30;
+}
+
+.buscador2 {
+    display: flex;
+    margin-bottom: 1px;
+    position: relative;
+    width: 100%;
+    z-index: 30;
+}
+
+.buscador3 {
+    background-color: #21282d;
+    display: flex;
+    height: 28px;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    z-index: 50;
+}
+
+.real_buscador {
+    background-color: #16181b;
+    border-radius: 24px 0 0 24px;
+    border-width: 0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    padding: 4px 8px;
+    width: 100%;
+}
+.real_buscador::placeholder {
+    color: #fff; /* Cambia el color del placeholder según lo desees */
+}
+
+.lupa {
+    align-items: center;
+    background-color: #16181b;
+    border-radius: 0 24px 24px 0;
+
+    display: flex;
+    height: 100%;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.lupa_img {
+    padding: 4px 8px;
+    fill: #7f97ab;
+}
+
+.setting {
+    align-items: center;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0 4px;
+    min-height: 20px;
+    min-width: 20px;
+}
+
+.setting2 {
+    height: 22px;
+    width: 28px;
+    z-index: 50;
+}
+
+
+.menu-setting {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding-top: 6px;    
+    padding-bottom: 6px;    
+    top: 42px;
+    z-index: 30;
+    width: 350px; /* Ajusta el ancho del menú según sea necesario */
+    height: 180px;
+    right: 358px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Define la sombra con color negro y 3% de transparencia */
+    border-radius: 5px;
+
+}
+
+.menu-setting.show {
+    display: block;
+}
+
+.menu-setting ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Añade un margen cero para evitar el espacio adicional */
+}
+
+.menu-setting ul li {
+    cursor: pointer;
+    display: block; /* Cambia la visualización a bloque para que cada elemento se muestre en una línea diferente */
+    padding: 12px; /* Agrega un espacio entre cada elemento de la lista */
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+.menu-setting ul li:hover {
+    color: #29b3e1; /* Cambia el color del texto cuando el cursor está encima del enlace */
+}
+
+.fondo {
+    border-bottom: 1px solid #ecf0f3;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+}
+.definir_fondo {
+    align-items: center;
+    color: #7f97ab;
+    display: flex;
+    font-size: 14px;
+    height: 32px;
+    font-weight: 500;
+    
+}
+.switch_fondo {
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    height: 40px;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    color: #505050;
+    font-size: 16px;
+    width: 100%;
+}
+.switch_boton {
+    align-items: center;
+    background-color: #ecf0f3;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 3px 0 #00000080;
+    cursor: pointer;
+    display: flex;
+    height: 14px;
+    object-fit: contain;
+    position: relative;
+    width: 32px;
+}
+
+.switch_boton_toggle_off {
+    align-items: center;
+    background-color: #7f97ab;
+    border-radius: 12px;
+    color: #f8f9fa;
+    display: flex;
+    font-size: 13px;
+    height: 20px;
+    justify-content: center;
+    object-fit: contain;
+    position: absolute;
+    transform: translateX(0);
+    transition: transform .1s ease-in-out, -webkit-transform .1s ease-in-out, -moz-transform .1s ease-in-out;
+    width: 20px;
+}
+
+.switch_boton_toggle_on {
+    align-items: center;
+    background-color: #02a9f4;
+    border-radius: 12px;
+    color: #f8f9fa;
+    display: flex;
+    font-size: 13px;
+    height: 20px;
+    justify-content: center;
+    object-fit: contain;
+    position: absolute;
+    transform: translateX(12px);
+    transition: transform .1s ease-in-out, -webkit-transform .1s ease-in-out, -moz-transform .1s ease-in-out;
+    width: 20px;
+}
+
+
+
+#setting_img {
+    cursor: pointer;
+}
+
+.idioma {
+    position: relative;
+}
+.idioma_menu {
+    background-color: #fff;
+    height: 48px;
+    justify-content: space-between;
+    display: flex;
+}
+.idioma_item2{
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.idioma_item2 img {
+    width: 18px;
+    height: 18px;
+    margin-right: 7px;
+    visibility: visible;
+}
+
+.idioma_selector_close {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.menuIdiomas {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Puedes ajustar el color de fondo según tus preferencias */
+    padding: 10px; /* Espaciado interno para las opciones de idioma */
+}
+
+#opcionIdioma {
+    padding: 5px 16px; /* Espaciado interno para las opciones de idioma */
+    cursor: pointer; /* Cambia el cursor al pasar sobre las opciones de idioma */
+}
+
+#opcionIdioma:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo cuando se pasa el mouse sobre las opciones de idioma */
+}
+
+

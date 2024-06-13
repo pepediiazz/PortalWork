@@ -1,0 +1,51 @@
+<div class="partidos-proximos">
+  <div class="partidos-proximos-featured">
+    <div class="partidos-proximos-featured-title">Featured Game</div>
+    <div class="carrousel-partidos-proximos">
+      <div class="carrousel1">
+        <div class="carousel-item" [@slideInOut]="animationState">
+          <div class="carousel-item1" style="order: 0;">
+            <div class="carousel-item1-item" *ngIf="games.length > 0; else noGamesTemplate">
+              <div class="carousel-item1-item-title">
+                <img [src]="games[currentGameIndex].league.logo" class="carousel-item1-item-title-img" style="max-width: 20px; max-height: 20px; width: auto; height: auto; visibility: visible;">
+                <a class="carousel-link" style="color: #505050; cursor: pointer; text-decoration: none;">{{ games[currentGameIndex].league.name }}</a>
+              </div>
+              <a class="carousel-fecha-restante">
+                <div class="carousel-fecha-restante-arriba"></div>
+                <div class="carousel-fecha-restante-contador">
+                  <div></div>
+                </div>
+              </a>
+              <a class="carousel-item1-item-equipo">
+                <div class="carousel-item1-item-equipos">
+                  <div class="carousel-item1-item-equipo-home">
+                    <img [src]="games[currentGameIndex].teams.home.logo" class="carousel-item1-item-equipo-home-img" style="max-width: 80px; max-height: 80px; min-width: 80px; min-height: 80px; z-index: 1; position: relative; right: -15px;visibility: visible;">
+                    <div class="carousel-item1-item-equipo-home-nombre" style="background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));background-color: rgb(127, 151, 171);max-width: 310px;">
+                      <div class="carousel-item1-item-equipo-home-nombre-text" style="min-width: 310px;">{{ games[currentGameIndex].teams.home.name }}</div>
+                    </div>
+                  </div>
+                  <div class="carousel-item1-item-equipo-vs" style="left: 27px;">VS</div>
+                  <div class="carousel-item1-item-equipo-away">
+                    <img [src]="games[currentGameIndex].teams.away.logo" class="carousel-item1-item-equipo-away-img" style="max-width: 80px; max-height: 80px; width: auto; height: auto; visibility: visible;">
+                    <div class="carousel-item1-item-equipo-away-nombre" style="background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05));background-color: rgb(199, 208, 216);max-width: 250px;">
+                      <div class="carousel-item1-item-equipo-away-nombre-text" style="min-width: 250px">{{ games[currentGameIndex].teams.away.name }}</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="nada"></div>
+              <div class="fecha">{{ games[currentGameIndex].date | date: 'fullDate':'es' }} | {{ games[currentGameIndex].time }}</div>
+            </div>
+            <ng-template #noGamesTemplate>
+              <div class="no-games">
+                No hay partidos disponibles.
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <button class="prev" (click)="prevGame()" *ngIf="games.length > 0">&#10094;</button>
+      <button class="next" (click)="nextGame()" *ngIf="games.length > 0">&#10095;</button>
+    </div>
+  </div>
+</div>
